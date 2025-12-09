@@ -1,0 +1,42 @@
+{
+  "project_name": "test_open_the_black_box",
+  "description": null,
+  "created_at": "2025-12-09T18:45:42.783980Z",
+  "last_updated": "2025-12-09T18:45:42.814004Z",
+  "stats": {
+    "commits": 0,
+    "executions": 0,
+    "analyses": 0,
+    "total_actions": 1
+  },
+  "actions": [
+    {
+      "timestamp": "2025-12-09T18:45:42.814004Z",
+      "type": "create",
+      "description": "Project created: None",
+      "extra": {
+        "readme_preview": "# test_open_the_black_box\n\nNone\n\n## Project Structure\n\n- `src/` - Source code\n- `tests/` - Test files\n- `docs/` - Documentation\n- `.lazydeve/` - LazyDeve metadata\n"
+      }
+    }
+  ],
+  "last_readme_update": null,
+  "version": "1.0",
+  "semantic_context": {
+    "description": null,
+    "tech_stack": [],
+    "keywords": [],
+    "activity_summary": {
+      "total_actions": 0,
+      "recent_focus": null,
+      "common_operations": [],
+      "error_patterns": []
+    },
+    "confidence_score": 0.0,
+    "last_analyzed": null
+  },
+  "documentation": {
+    "readme_last_updated": null,
+    "auto_generated": false,
+    "sections": []
+  }
+}

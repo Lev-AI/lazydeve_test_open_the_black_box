@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# Application logs (LazyDeve can read from file system)
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Backups
+*.bak
+*.backup
+
+# Aider temp files
+.aider.*
+.aider/
+
+# 🔴 Secrets (CRITICAL)
+.env
+*.key
+*.pem
+
+# ⚠️ CRITICAL: DO NOT IGNORE .lazydeve/ — IT MUST BE TRACKED!
+# .lazydeve/ contains context system data (memory, snapshots, events)
+# and must be synced to Git for agent workflow
