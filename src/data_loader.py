@@ -3,28 +3,46 @@ import pandas as pd
 from scipy.io import arff
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
+from typing import Tuple
 
-def load_data(file_path: str):
-    """Load dataset from CSV, ARFF, or Parquet files."""
+def load_data(file_path: str) -> pd.DataFrame:
+    """Load dataset from CSV, ARFF, or Parquet files.
+
+    Args:
+        file_path (str): Path to the dataset file.
+
+    Returns:
+        pd.DataFrame: Loaded dataset as a DataFrame.
+    """
     ext = os.path.splitext(file_path)[1].lower()
 
-    if ext == ".csv":
-        df = pd.read_csv(file_path)
-    elif ext == ".parquet":
-        df = pd.read_parquet(file_path)
-    elif ext == ".arff":
-        data, meta = arff.loadarff(file_path)
-        df = pd.DataFrame(data)
-        # Decode byte columns (common in ARFF)
-        for col in df.select_dtypes([object]):
-            df[col] = df[col].apply(lambda x: x.decode("utf-8") if isinstance(x, bytes) else x)
-    else:
-        raise ValueError(f"Unsupported file format: {ext}")
+    try:
+        if ext == ".csv":
+            df = pd.read_csv(file_path)
+        elif ext == ".parquet":
+            df = pd.read_parquet(file_path)
+        elif ext == ".arff":
+            data, meta = arff.loadarff(file_path)
+            df = pd.DataFrame(data)
+            # Decode byte columns (common in ARFF)
+            for col in df.select_dtypes([object]):
+                df[col] = df[col].apply(lambda x: x.decode("utf-8") if isinstance(x, bytes) else x)
+        else:
+            raise ValueError(f"Unsupported file format: {ext}")
+    except Exception as e:
+        raise RuntimeError(f"Error loading data from {file_path}: {e}")
 
     return df
 
-def preprocess_data(df: pd.DataFrame):
-    """Clean and encode dataset for ML model compatibility."""
+def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
+    """Clean and encode dataset for ML model compatibility.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame to preprocess.
+
+    Returns:
+        pd.DataFrame: Preprocessed DataFrame.
+    """
     df = df.dropna(axis=0)
 
     # Detect label column automatically
@@ -42,8 +60,17 @@ def preprocess_data(df: pd.DataFrame):
     df = pd.concat([X, df[target_col]], axis=1)
     return df
 
-def split_data(df: pd.DataFrame, test_size=0.2, random_state=42):
-    """Split features and target into train/test sets."""
+def split_data(df: pd.DataFrame, test_size: float = 0.2, random_state: int = 42) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+    """Split features and target into train/test sets.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame to split.
+        test_size (float): Proportion of the dataset to include in the test split.
+        random_state (int): Random seed for reproducibility.
+
+    Returns:
+        Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]: Split datasets.
+    """
     target_col = next((c for c in df.columns if c.lower() in ["label", "target", "class"]), df.columns[-1])
     X = df.drop(columns=[target_col])
     y = df[target_col]
