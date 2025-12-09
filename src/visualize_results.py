@@ -38,8 +38,12 @@ def visualize_drift_summary(drift_json_path='outputs/drift_summary.json'):
         logging.warning(f"No drift summary found at {drift_json_path}")
         return
 
-    with open(drift_json_path, 'r') as f:
-        drift_data = json.load(f)
+    try:
+        with open(drift_json_path, 'r') as f:
+            drift_data = json.load(f)
+    except json.JSONDecodeError:
+        logging.error(f"Error decoding JSON from {drift_json_path}")
+        return
 
     if 'evidently' in drift_data:
         features = list(drift_data['evidently'].get('metrics', {}).keys())
