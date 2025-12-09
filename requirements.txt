@@ -1,0 +1,11 @@
+scikit-learn
+xgboost
+pandas
+numpy
+evidently
+alibi-detect
+shap
+matplotlib
+plotly
+streamlit
+mlflow
