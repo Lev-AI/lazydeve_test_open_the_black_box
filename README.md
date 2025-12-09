@@ -6,43 +6,15 @@ A Machine Learning Robustness Lab for Evolving Cyber Attacks
 ---
 
 ## ⭐ Overview
-Enter The Black Box — это исследовательская ML-платформа, созданная для анализа устойчивости (robustness) моделей кибербезопасности к изменяющимся паттернам атак.
+Enter The Black Box is a research ML platform designed to analyze the robustness of cybersecurity models against evolving attack patterns.
+It shows:
+- how traffic or log changes break ML models
+- which features are critical
+- how False Negatives / False Positives grow
+- where the model becomes blind
+- how it behaves under data drift, noise injection, and adversarial perturbations.
 
-Проект показывает:
-- как изменения трафика или логов ломают ML-модель,
-- какие признаки критичны,
-- как растут False Negatives / False Positives,
-- где модель становится слепой,
-- как ведёт себя при data drift, noise injection, adversarial perturbations.
-
-Это не просто IDS-модель.
-Это лаборатория, которая помогает понять, насколько хрупки ML-решения в кибербезопасности — и как их улучшать.
-
----
-
-## 🎯 Key Features
-- Baseline ML-модель IDS (RandomForest/XGBoost)
-- Attack Mutation Engine (drop features, add noise, create drift, mutate patterns)
-- Data Drift Detection (Evidently AI, Alibi Detect)
-- Concept Drift Detection
-- Adversarial Sample Simulation (простые perturbations)
-- Robustness Scoring & Metrics Comparison
-- Explainability (SHAP) — выявляет, какие признаки ломают модель
-- Interactive Streamlit Dashboard
-- MLflow Experiment Tracking
-- Clear reports for SOC / Threat Research teams
-
----
-
-## 🔬 Why This Project Is Important
-Современные IDS/NDR системы всё чаще включают ML. Но почти никто не тестирует:
-- как модель ведёт себя под дрейфом данных
-- видит ли она новые атаки, слегка отличающиеся
-- что произойдёт при повреждении логов
-- какие признаки являются “single points of failure”
-- где модель начинает делать опасные False Negatives
-
-Этот проект помогает увидеть слабые места ML-моделей безопасности.
+This is not just an IDS model — it's a lab that helps understand how fragile ML-based cybersecurity systems can be and how to improve them.
 
 ---
 
@@ -53,14 +25,14 @@ Enter-The-Black-Box/
 ├── data/                     # Datasets (CIC-IDS2017 / UNSW-NB15)
 │
 ├── src/
-│   ├── data_loader.py        # Загрузка и очистка данных
+│   ├── data_loader.py        # Data loading and cleaning
 │   ├── baseline_model.py     # RandomForest/XGBoost baseline
-│   ├── mutation_engine.py    # Уникальный модуль изменения паттернов
+│   ├── mutation_engine.py    # Attack pattern mutation module
 │   ├── drift_detector.py     # Evidently + Alibi Detect
-│   ├── robustness_eval.py    # Сравнение baseline vs mutated
-│   ├── explainability.py     # SHAP графики
-│   ├── report_generator.py   # Автоматические отчёты
-│   └── dashboard.py          # Streamlit интерфейс
+│   ├── robustness_eval.py    # Baseline vs mutated comparison
+│   ├── explainability.py     # SHAP visualizations
+│   ├── report_generator.py   # Automatic reports
+│   └── dashboard.py          # Streamlit dashboard
 │
 ├── notebooks/
 │   ├── 01_baseline.ipynb
@@ -68,7 +40,7 @@ Enter-The-Black-Box/
 │   ├── 03_drift_tests.ipynb
 │   └── 04_shap_analysis.ipynb
 │
-├── mlruns/                   # Логи MLflow (авто-создаётся)
+├── mlruns/                   # MLflow logs (auto-created)
 │
 ├── README.md
 └── requirements.txt
@@ -76,24 +48,50 @@ Enter-The-Black-Box/
 
 ---
 
+## 🎯 Key Features
+- Baseline ML IDS model (RandomForest/XGBoost)
+- Attack Mutation Engine (drop features, add noise, create drift, mutate patterns)
+- Data Drift Detection (Evidently AI, Alibi Detect)
+- Concept Drift Detection
+- Adversarial Sample Simulation
+- Robustness Scoring & Metrics Comparison
+- Explainability (SHAP)
+- Interactive Streamlit Dashboard
+- MLflow Experiment Tracking
+- Clear reports for SOC / Threat Research teams
+
+---
+
+## 🔬 Why This Project Is Important
+Modern IDS/NDR systems increasingly use ML — but very few test:
+- how models behave under data drift
+- if they detect slightly modified attacks
+- what happens with corrupted logs
+- which features are single points of failure
+- where dangerous False Negatives appear
+
+This project reveals weak points in ML-based security models.
+
+---
+
 ## ⚙️ Core Components
 ### 🔥 1. Attack Mutation Engine
-Симулирует изменения паттернов атак: удаление признаков, добавление шума, мутации портов и создание новых атак.
+Simulates attack pattern changes — feature removal, noise injection, frequency mutation, or adversarial tweaks.
 
 ### 📈 2. Drift Detection Layer
-Использует **Evidently AI** и **Alibi Detect** для анализа дрейфа и adversarial detection.
+Uses **Evidently AI** and **Alibi Detect** for drift and adversarial detection.
 
 ### 🤖 3. ML Baseline
-Модели **RandomForest** или **XGBoost**, обучаемые на **CIC-IDS2017** или **UNSW-NB15**.
+Models: **RandomForest** or **XGBoost**, trained on **CIC-IDS2017** or **UNSW-NB15** datasets.
 
 ### 🧠 4. Explainability (SHAP)
-SHAP помогает визуализировать влияние признаков и причины ошибок модели.
+Visualizes feature importance and explains model behavior.
 
 ### 📊 5. Streamlit Dashboard
-Интерактивный интерфейс для тестирования сценариев мутаций и визуализации результатов.
+Interactive UI to run mutation scenarios and visualize results.
 
 ### 📜 6. MLflow Logging
-Хранит метрики, параметры и результаты экспериментов.
+Tracks parameters, metrics, and experiment outcomes.
 
 ---
 
@@ -105,16 +103,16 @@ SHAP помогает визуализировать влияние призна
 5. Detect drift
 6. Explain errors (SHAP)
 7. Generate report
-8. Visualize results через Streamlit
+8. Visualize results with Streamlit
 
 ---
 
 ## 📊 Example Use Cases
-- Проверка ML-модели на устойчивость
-- Оценка готовности IDS к новым атакам
-- Анализ слабых мест detection-pipeline
-- Исследование adversarial-атак
-- Создание whitepaper или R&D отчёта
+- Test ML model robustness
+- Evaluate IDS readiness for new attacks
+- Analyze detection pipeline weaknesses
+- Study adversarial attacks
+- Build whitepapers or R&D reports
 
 ---
 
@@ -148,7 +146,7 @@ mlflow
 ---
 
 ## 📘 Roadmap
-**MVP (1–2 недели)**
+**MVP (1–2 weeks)**
 - baseline model
 - mutation engine
 - drift detection
@@ -171,7 +169,7 @@ mlflow
 ---
 
 ## 📄 License
-MIT — свободно для обучения и исследований.
+MIT — free for education and research.
 
 ---
 
