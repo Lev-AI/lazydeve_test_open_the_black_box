@@ -1,8 +1,9 @@
 import streamlit as st
 import logging
+import requests
 from src.data_loader import load_data
 from src.baseline_model import train_baseline
-from src.mutation_engine import add_noise, drop_features, drift_features
+from src.mutation_engine import add_noise, drop_features, drift_features, log_memory_note
 from src.drift_detector import detect_drift_evidently, detect_drift_alibi
 from src.robustness_eval import evaluate_robustness
 from src.explainability import compute_shap_values, plot_shap_summary
@@ -71,6 +72,9 @@ def main():
         report = generate_experiment_report(drift_report_evidently, drift_report_alibi, robustness_report)
         save_report(report)
         st.write("Experiment report generated and saved.")
+        
+        # Log memory note
+        log_memory_note('test_note_phase 4')
 
 if __name__ == "__main__":
     main()

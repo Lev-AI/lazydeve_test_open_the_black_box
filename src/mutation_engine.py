@@ -5,6 +5,7 @@ This module handles mutation operations.
 import numpy as np
 import pandas as pd
 import logging
+import requests
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -75,3 +76,21 @@ def mutate_dataset(X):
     X = drop_features(X)
     X = drift_features(X)
     return X
+
+def log_memory_note(note: str):
+    """
+    Logs a note to the project memory using the specified API endpoint.
+    
+    Parameters:
+    note (str): The note to log.
+    """
+    url = "/api/v1/context/test_open_the_black_box/user-memory"
+    payload = {'note': note}
+    try:
+        response = requests.post(url, json=payload)
+        if response.status_code == 200:
+            logger.info("Note logged successfully.")
+        else:
+            logger.error(f"Failed to log note: {response.text}")
+    except Exception as e:
+        logger.error(f"Error logging note: {str(e)}")

@@ -3,6 +3,7 @@ import logging
 import os
 import matplotlib.pyplot as plt
 import mlflow
+import requests
 
 from src import data_loader, baseline_model, mutation_engine, drift_detector, robustness_eval, explainability, report_generator
 
@@ -51,6 +52,9 @@ def main(dataset_path: str, model_type: str):
     mlflow.log_params({'model_type': model_type, 'dataset': os.path.basename(dataset_path)})
     mlflow.log_metrics({k: v for k, v in metrics_ref.items() if isinstance(v, (int, float))})
     mlflow.end_run()
+
+    logging.info("Logging memory note...")
+    log_memory_note('test_note_phase 4')
 
     logging.info("Visualizing results...")
     metrics = ['accuracy', 'precision', 'recall', 'f1']
