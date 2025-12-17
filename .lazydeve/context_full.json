@@ -1,12 +1,38 @@
 {
   "version": "1.0",
-  "generated_at": "2025-12-16T17:29:00.183295Z",
+  "generated_at": "2025-12-17T15:47:32.627390Z",
   "project_name": "test_open_the_black_box",
-  "description": null,
-  "tech_stack": [],
-  "recent_focus": null,
-  "keywords": [],
-  "confidence": 0.0,
+  "description": "Project 'test_open_the_black_box' using api, git, python and more with 29 development actions recorded.",
+  "tech_stack": [
+    "api",
+    "git",
+    "python",
+    "testing"
+  ],
+  "recent_focus": "updated, data_loader, analysis",
+  "keywords": [
+    "057788z",
+    "09t19",
+    "09t20",
+    "104790z",
+    "10t13",
+    "13t14",
+    "16t09",
+    "174662z",
+    "187306z",
+    "2025",
+    "243323z",
+    "281148z",
+    "507825z",
+    "553770z",
+    "601896z",
+    "700435z",
+    "706773z",
+    "716755z",
+    "738993z",
+    "749100z"
+  ],
+  "confidence": 1.0,
   "readme": {
     "preview": "🧠 Enter The Black Box\n\nA Machine Learning Robustness Lab for Evolving Cyber Attacks\n(Stress-Testing ML Models for Cybersecurity Drift, Mutation & Resilience)\n\n---\n\n--\n\n## 🚀 Overview\n**Enter The Black Box** is a modular research platform designed to analyze and improve the **robustness of ML-based cybersecurity models**. It enables testing how intrusion detection systems (IDS/NDR) behave under **data drift, adversarial noise, and feature corruption**.\n\n---\n\n## 🧩 Key Capabilities\n- **Baseline Training** — Train ML models (RandomForest, XGBoost) on IDS datasets like NSL-KDD.\n- **Attack Mutation Engine** — Simulate adversarial noise, drift, and missing features.\n- **Drift Detection** — Detect and visualize data drift using Evidently AI and Alibi Detect.\n- **Robustness Evaluation** — Measure performance degradation between baseline and mutated datasets.\n- **Explainability** — Understand feature importance and model behavior with SHAP.\n- **Visualization Tools** — Static (Matplotlib) and interactive (Streamlit) dashboards for analysis.\n- **Experiment Tracking** — Full MLflow integration for logging models, metrics, and reports.\n\n---\n\n## 🏗 Project Structure\n\n---\n\n## ⚙️ How to Use\n\n### 🧠 1. Install Requirements\n\n### 📊 2. Run an Automated Experiment",
     "last_updated": "2025-12-09T21:52:18.932591Z",
@@ -39,9 +65,15 @@
     ]
   },
   "activity": {
-    "total_actions": 0,
-    "recent_focus": null,
-    "common_operations": [],
+    "total_actions": 29,
+    "recent_focus": "updated, data_loader, analysis",
+    "common_operations": [
+      "execute",
+      "add_test",
+      "analyze",
+      "create",
+      "commit"
+    ],
     "error_patterns": [],
     "recent_actions": [
       {
