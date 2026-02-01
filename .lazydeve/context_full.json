@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-06T15:48:06.628413Z",
+  "generated_at": "2026-02-01T11:51:15.320961Z",
   "project_name": "test_open_the_black_box",
   "description": "Project 'test_open_the_black_box' using api, git, python and more with 29 development actions recorded.",
   "tech_stack": [
@@ -34,9 +34,9 @@
   ],
   "confidence": 1.0,
   "readme": {
-    "preview": "Enter The Black Box\n\nA Machine Learning Robustness Lab for Evolving Cyber Attacks\n\nks\n\n---\n\n## 🧩 Overview\nThis project was specially created as a **test environment** to demonstrate and evaluate the capabilities of the LazyDeve agent — including project synchronization, file management, code execution, and AI-assisted development workflows.\n\nIt serves as both a **functional ML robustness framework** and a **sandbox** for automated AI project control, showing how LazyDeve handles analysis, updates, and integration tasks.\n\n---\n\n## ⚙️ Features\n- Baseline training and evaluation of ML models (RandomForest, XGBoost)\n- Adversarial mutation and drift simulation\n- Drift detection using Evidently AI and Alibi Detect\n- Explainability with SHAP\n- Streamlit-based visualization dashboard\n- Experiment tracking with MLflow\n\n---\n\n> 🔍 *This project is maintained and operated as part of the LazyDeve AI testing suite.*",
-    "last_updated": "2026-01-06T15:48:06.596587Z",
-    "checksum": "c1b5d0933efee3979eff0493af08103e"
+    "preview": "🧠 Enter The Black Box\n\nA Machine Learning Robustness Lab for Evolving Cyber Attacks\n(Stress-Testing ML Models for Cybersecurity Drift, Mutation & Resilience)\n\n---\n\n--\n\n> ⚙️ *Note: This is a special test project created to demonstrate and test the capabilities of the LazyDeve agent, including synchronization, file management, and AI-assisted development.*\n\n---\n\n## ⭐ Overview\nEnter The Black Box is a research ML platform designed to analyze the robustness of cybersecurity models against evolving attack patterns.\nIt shows:\n- how traffic or log changes break ML models\n- which features are critical\n- how False Negatives / False Positives grow\n- where the model becomes blind\n- how it behaves under data drift, noise injection, and adversarial perturbations.\n\nThis is not just an IDS model — it's a lab that helps understand how fragile ML-based cybersecurity systems can be and how to improve them.\n\n---\n\n## 🏗 Architecture\n\n---\n\n## 🎯 Key Features\n- Baseline ML IDS model (RandomForest/XGBoost)\n- Attack Mutation Engine (drop features, add noise, create drift, mutate patterns)\n- Data Drift Detection (Evidently AI, Alibi Detect)\n- Concept Drift Detection\n- Adversarial Sample Simulation\n- Robustness Scoring & Metrics Comparison\n- Explainability (SHAP)\n- Interactive Streamlit Dashboard\n- MLflow Experiment Tracking\n- Clear reports for SOC / Threat Research teams\n\n---",
+    "last_updated": "2026-02-01T11:39:38.962274Z",
+    "checksum": "23b1d4df69b322c3c88b4cf94b76a2a1"
   },
   "commits": {
     "last_commit": {
@@ -90,6 +90,11 @@
     "error_patterns": [],
     "recent_actions": [
       {
+        "time": "2026-01-06T13:53:31.115493Z",
+        "action": "Updated: README.md",
+        "status": "ok"
+      },
+      {
         "time": "2026-01-06T13:39:17.121938Z",
         "action": "Updated: README.md",
         "status": "ok"
@@ -108,11 +113,6 @@
         "time": "2025-12-13T14:32:59.833875Z",
         "action": "Executed: Create a new Python file named test_3.py in the ac",
         "status": "ok"
-      },
-      {
-        "time": "2025-12-10T13:11:40.187306Z",
-        "action": "Updated: Project-instruction.md",
-        "status": "ok"
       }
     ]
   },
@@ -129,7 +129,7 @@
     "commits": 1,
     "executions": 15,
     "analyses": 3,
-    "total_actions": 30
+    "total_actions": 31
   },
   "user_memory": null
 }
