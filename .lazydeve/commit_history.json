@@ -2,19 +2,33 @@
   "version": "1.0",
   "last_commit": {
     "version": "1.0",
-    "commit_id": "53c1bc0",
-    "commit_id_full": "53c1bc0dc936799e124cc71972b51f6a75cf990c",
+    "commit_id": "3250a51",
+    "commit_id_full": "3250a511463e94c781746c9897009402e3ca2d83",
     "files_changed": [
       ".lazydeve/commit_history.json",
       ".lazydeve/context.db",
       ".lazydeve/context_full.json"
     ],
     "summary": "[LazyDeve] auto: Startup commit (test_open_the_black_box)",
-    "timestamp": "2026-02-07T12:08:32.154835Z",
+    "timestamp": "2026-02-07T17:38:34.738752Z",
     "project": "test_open_the_black_box",
     "body": ""
   },
   "history": [
+    {
+      "version": "1.0",
+      "commit_id": "3250a51",
+      "commit_id_full": "3250a511463e94c781746c9897009402e3ca2d83",
+      "files_changed": [
+        ".lazydeve/commit_history.json",
+        ".lazydeve/context.db",
+        ".lazydeve/context_full.json"
+      ],
+      "summary": "[LazyDeve] auto: Startup commit (test_open_the_black_box)",
+      "timestamp": "2026-02-07T17:38:34.738752Z",
+      "project": "test_open_the_black_box",
+      "body": ""
+    },
     {
       "version": "1.0",
       "commit_id": "53c1bc0",
@@ -25,7 +39,7 @@
         ".lazydeve/context_full.json"
       ],
       "summary": "[LazyDeve] auto: Startup commit (test_open_the_black_box)",
-      "timestamp": "2026-02-07T12:08:32.154835Z",
+      "timestamp": "2026-02-07T17:38:34.738752Z",
       "project": "test_open_the_black_box",
       "body": ""
     },
@@ -40,24 +54,11 @@
         ".lazydeve/reports/run_20260204_224435.md"
       ],
       "summary": "[LazyDeve] auto: Startup commit (test_open_the_black_box)",
-      "timestamp": "2026-02-07T12:08:32.154835Z",
-      "project": "test_open_the_black_box",
-      "body": ""
-    },
-    {
-      "version": "1.0",
-      "commit_id": "506fe38",
-      "commit_id_full": "506fe38d399548fd6b56eea860e0c42dae504bbe",
-      "files_changed": [
-        ".lazydeve/context.db",
-        ".lazydeve/context_full.json"
-      ],
-      "summary": "[LazyDeve] auto: Startup commit (test_open_the_black_box)",
-      "timestamp": "2026-02-07T12:08:32.154835Z",
+      "timestamp": "2026-02-07T17:38:34.738752Z",
       "project": "test_open_the_black_box",
       "body": ""
     }
   ],
   "max_commits": 3,
-  "last_updated": "2026-02-07T12:08:32.154835Z"
+  "last_updated": "2026-02-07T17:38:34.738752Z"
 }

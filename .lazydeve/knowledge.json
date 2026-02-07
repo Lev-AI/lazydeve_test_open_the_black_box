@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "records": [
+    {
+      "id": "kr_d29c5b54cecb",
+      "knowledge_type": "invariant",
+      "content": "RAG is advisory only; Git and JSON remain sources of truth.",
+      "summary": "RAG is advisory only; Git and JSON are the sources of truth",
+      "project": "test_open_the_black_box",
+      "status": "active",
+      "confidence": "explicit",
+      "provenance": {
+        "source_file": "user_memory",
+        "source_type": "manual",
+        "extraction_date": "2026-02-07T17:45:06.619391",
+        "source_hash": null,
+        "extracted_by": "human"
+      },
+      "tags": [],
+      "created_at": "2026-02-07T17:45:06.619391",
+      "updated_at": "2026-02-07T17:45:06.619391"
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-02-07T17:45:06.620304",
+    "updated_at": "2026-02-07T17:45:06.621393"
+  }
+}
