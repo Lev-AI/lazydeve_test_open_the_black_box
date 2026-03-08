@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/LENOVO/Desktop/Python/open_the_black_box_Onion/mlruns/0/models/m-57d05f07c3e342d8a141bfb25eaab677/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.8.1
+model_id: m-57d05f07c3e342d8a141bfb25eaab677
+model_size_bytes: 4563256
+model_uuid: m-57d05f07c3e342d8a141bfb25eaab677
+prompts: null
+run_id: d1a10d84c8024bf296fbef04a6929509
+utc_time_created: '2026-01-29 09:02:13.257972'
