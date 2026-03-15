@@ -1,6 +1,14 @@
 import argparse
 import logging
 import os
+import sys
+
+# Ensure project root is on path when running as python src/run_experiment.py
+_script_dir = os.path.dirname(os.path.abspath(__file__))
+_root = os.path.dirname(_script_dir)
+if _root not in sys.path:
+    sys.path.insert(0, _root)
+
 import matplotlib.pyplot as plt
 import mlflow
 import requests
@@ -15,26 +23,36 @@ def main(dataset_path: str, model_type: str):
     """Run the full ML robustness pipeline with visualization."""
     os.makedirs('outputs', exist_ok=True)
 
+    # Auto-fallback: if real dataset not found, generate and use synthetic data
+    if not os.path.exists(dataset_path):
+        logging.warning("⚠️ Real dataset not found. Using SYNTHETIC data for demonstration.")
+        from src.generate_synthetic import generate_synthetic
+        generate_synthetic(output_path="data/synthetic_data.csv")
+        dataset_path = "data/synthetic_data.csv"
+
     logging.info("Loading dataset...")
     df = data_loader.load_data(dataset_path)
     df = data_loader.preprocess_data(df)
-    X = df.drop('label', axis=1, errors='ignore')
-    y = df.get('label')
-    X_train, X_test, y_train, y_test = data_loader.split_data(X, y)
+    X_train, X_test, y_train, y_test = data_loader.split_data(df)
 
     logging.info("Training baseline model...")
-    metrics_ref, model = baseline_model.train_baseline(X_train, y_train, X_test, y_test, model_type)
+    model = baseline_model.train_baseline(X_train, y_train, model_type)
+    metrics_ref = baseline_model.evaluate_model(model, X_test, y_test)
 
     logging.info("Applying mutation engine...")
     X_mut = mutation_engine.mutate_dataset(X_test.copy())
 
+    # Align mutated data to training features (mutation may drop columns); fill missing with 0
+    train_cols = getattr(model, "feature_names_in_", X_train.columns)
+    X_mut_aligned = X_mut.reindex(columns=train_cols, fill_value=0)
+
     logging.info("Evaluating drift...")
-    drift_report = drift_detector.compare_drift(X_test, X_mut)
+    drift_report = drift_detector.compare_drift(X_test, X_mut_aligned)
 
     logging.info("Evaluating robustness...")
     robustness_report = robustness_eval.generate_robustness_report(
         metrics_ref,
-        baseline_model.evaluate_model(model, X_mut, y_test)
+        baseline_model.evaluate_model(model, X_mut_aligned, y_test)
     )
 
     logging.info("Generating SHAP explainability plots...")
@@ -74,7 +92,7 @@ def main(dataset_path: str, model_type: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run the Enter The Black Box experiment pipeline.')
-    parser.add_argument('--data', type=str, required=True, help='Path to dataset (.arff, .csv, etc.)')
+    parser.add_argument('--data', type=str, default='data/cicids2017.csv', help='Path to dataset (.arff, .csv). If missing, synthetic data is used.')
     parser.add_argument('--model', type=str, default='rf', choices=['rf', 'xgb'], help='Model type (rf or xgb)')
     args = parser.parse_args()
 

@@ -1,11 +1,20 @@
-scikit-learn
-xgboost
+# Core data & ML (from src/data_loader, baseline_model, mutation_engine, robustness_eval)
 pandas
 numpy
+scipy
+scikit-learn
+xgboost
+
+# Drift & explainability (from src/drift_detector, explainability)
 evidently
 alibi-detect
 shap
+
+# Viz & dashboard (from src/run_experiment, visualize_results, dashboard)
 matplotlib
 plotly
 streamlit
+
+# Experiment tracking & HTTP (from src/run_experiment, report_generator, mutation_engine)
 mlflow
+requests

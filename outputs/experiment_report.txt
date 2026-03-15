@@ -1,0 +1,37 @@
+# Experiment Report
+
+## Reference Metrics
+- accuracy: 0.585
+- precision: 0.3486363636363637
+- recall: 0.585
+- f1: 0.43689873417721514
+- confusion_matrix: [[117   0   1   0   0]
+ [ 13   0   0   0   0]
+ [ 17   0   0   0   1]
+ [ 16   0   0   0   0]
+ [ 35   0   0   0   0]]
+
+## Mutated Metrics
+- accuracy: 0.585
+- precision: 0.3486363636363637
+- recall: 0.585
+- f1: 0.43689873417721514
+- confusion_matrix: [[117   0   1   0   0]
+ [ 13   0   0   0   0]
+ [ 17   0   0   0   1]
+ [ 16   0   0   0   0]
+ [ 35   0   0   0   0]]
+
+## Drift Report
+{'evidently': {'metrics': [{'id': '15e89f895b482f9b84ba7274ed18a106', 'metric_name': 'DriftedColumnsCount(drift_share=0.5)', 'config': {'type': 'evidently:metric_v2:DriftedColumnsCount', 'drift_share': 0.5}, 'value': {'count': 3.0, 'share': 0.21428571428571427}}, {'id': 'f88f6080dd2c08b212b220170130b3de', 'metric_name': 'ValueDrift(column=Destination Port,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Destination Port', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': '8928ab3ef1e2870fbd91a1041a6148ee', 'metric_name': 'ValueDrift(column=Flow Duration,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Flow Duration', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': '79b3ba2eabcd69574722085d87b05bf7', 'metric_name': 'ValueDrift(column=Total Fwd Packets,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Total Fwd Packets', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': 'efc1eafd298cae123984d75dbd40d06f', 'metric_name': 'ValueDrift(column=Total Bwd Packets,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Total Bwd Packets', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': 'ae4aa300650ce96daebed22c55245961', 'metric_name': 'ValueDrift(column=Total Length of Fwd Packets,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Total Length of Fwd Packets', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': '035069949f3a64ead7636ffc8eb3f1fc', 'metric_name': 'ValueDrift(column=Fwd Packet Length Max,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Fwd Packet Length Max', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 0.9999999999999998}, {'id': '8b428e7b6936711c81065257f6dc2990', 'metric_name': 'ValueDrift(column=Fwd Packet Length Min,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Fwd Packet Length Min', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 4.4222084879394686e-27}, {'id': 'd638b1e1ff200051ce020530c517d83b', 'metric_name': 'ValueDrift(column=Bwd Packet Length Max,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Bwd Packet Length Max', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 0.9999999999999998}, {'id': '1acc25dcef95722f13b887a3eeabee6e', 'metric_name': 'ValueDrift(column=Bwd Packet Length Min,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Bwd Packet Length Min', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.5340721316207992e-24}, {'id': 'c5771e814291939c4bb336964862b133', 'metric_name': 'ValueDrift(column=Flow Bytes/s,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Flow Bytes/s', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': '679c0e67471c02110be4ebdff5994154', 'metric_name': 'ValueDrift(column=Flow Packets/s,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Flow Packets/s', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': '96a7a23895e59c0bd7d76bc99c19bc2c', 'metric_name': 'ValueDrift(column=Flow IAT Mean,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Flow IAT Mean', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': '261309d37409e00ae5fda37aa837c931', 'metric_name': 'ValueDrift(column=Flow IAT Std,method=K-S p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Flow IAT Std', 'method': 'K-S p_value', 'threshold': 0.05}, 'value': 1.0}, {'id': 'd4f6a708f20af7d4dfb5c9b0746f38d2', 'metric_name': 'ValueDrift(column=Total Length of Bwd Packets,method=chi-square p_value,threshold=0.05)', 'config': {'type': 'evidently:metric_v2:ValueDrift', 'column': 'Total Length of Bwd Packets', 'method': 'chi-square p_value', 'threshold': 0.05}, 'value': 0.0}], 'tests': []}, 'alibi': {'drift_score': 0.3201842404030736, 'p_value': 0.0}}
+
+## Robustness Report
+{'reference_metrics': {'accuracy': 0.585, 'precision': 0.3486363636363637, 'recall': 0.585, 'f1': 0.43689873417721514, 'confusion_matrix': array([[117,   0,   1,   0,   0],
+       [ 13,   0,   0,   0,   0],
+       [ 17,   0,   0,   0,   1],
+       [ 16,   0,   0,   0,   0],
+       [ 35,   0,   0,   0,   0]], dtype=int64)}, 'mutated_metrics': {'accuracy': 0.58, 'precision': 0.3474111675126903, 'recall': 0.58, 'f1': 0.43453968253968256, 'confusion_matrix': array([[116,   0,   1,   1,   0],
+       [ 12,   0,   0,   0,   1],
+       [ 18,   0,   0,   0,   0],
+       [ 16,   0,   0,   0,   0],
+       [ 35,   0,   0,   0,   0]], dtype=int64)}, 'degradation': {'accuracy': 0.8547008547008554, 'precision': 0.3514252245217021, 'recall': 0.8547008547008554, 'f1': 0.5399538732871914}}
